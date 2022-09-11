@@ -1,0 +1,156 @@
+/* *************************
+*                          *
+*    SCSS: Color Pallet    *
+*                          *
+************************* */
+
+// https://coolors.co/03071e-370617-6a040f-9d0208-d00000-dc2f02-e85d04-f48c06-faa307-ffba08
+
+/* SCSS HSL */
+$xiketic: hsla(231, 82%, 6%, 1);
+$darkSienna: hsla(339, 80%, 12%, 1);
+$rosewood: hsla(354, 93%, 22%, 1);
+$darkRed: hsla(358, 97%, 31%, 1);
+$rossoCorsa: hsla(0, 100%, 41%, 1);
+$vermilion: hsla(12, 98%, 44%, 1);
+$persimmon: hsla(23, 97%, 46%, 1);
+$tangerine: hsla(34, 95%, 49%, 1);
+$orangeWeb: hsla(39, 96%, 50%, 1);
+$selectiveYellow: hsla(43, 100%, 52%, 1);
+$white: hsla(0, 0%, 100%, 1);
+$black: hsla(0, 0%, 0%, 1);
+
+/* SCSS Gradient */
+$gradientTop: linear-gradient(
+  0deg,
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+$gradientRight: linear-gradient(
+  90deg,
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+$gradientBottom: linear-gradient(
+  180deg,
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+$gradientLeft: linear-gradient(
+  270deg,
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+$gradientTopRight: linear-gradient(
+  45deg,
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+$gradientBottomRight: linear-gradient(
+  135deg,
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+$gradientTopLeft: linear-gradient(
+  225deg,
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+$gradientBottomLeft: linear-gradient(
+  315deg,
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+$gradientRadial: radial-gradient(
+  #03071eff,
+  #370617ff,
+  #6a040fff,
+  #9d0208ff,
+  #d00000ff,
+  #dc2f02ff,
+  #e85d04ff,
+  #f48c06ff,
+  #faa307ff,
+  #ffba08ff
+);
+
+// Exporting colors for use in JS
+:export {
+  xiketic: $xiketic;
+  darkSienna: $darkSienna;
+  rosewood: $rosewood;
+  darkRed: $darkRed;
+  rossoCorsa: $rossoCorsa;
+  vermilion: $vermilion;
+  persimmon: $persimmon;
+  tangerine: $tangerine;
+  orangeWeb: $orangeWeb;
+  selectiveYellow: $selectiveYellow;
+  gradientBottomRight: $gradientBottomRight;
+  white: $white;
+  black: $black;
+}

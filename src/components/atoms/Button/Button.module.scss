@@ -1,0 +1,18 @@
+@import "@styles/colors.module.scss";
+@import "@styles/mixins.module.scss";
+@import "@styles/sizes.module.scss";
+
+.btn {
+  padding: 1rem;
+  margin: 14px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border: 2px solid $xiketic;
+}
+
+.btn:hover {
+  border: 2px solid $persimmon;
+}

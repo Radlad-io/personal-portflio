@@ -1,0 +1,35 @@
+@import "@styles/colors.module.scss";
+@import "@styles/sizes.module.scss";
+
+.title {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-bottom: $vertical-margin;
+  padding: 8rem 2rem 10rem 2rem;
+  background-color: $xiketic;
+  background-image: $gradientBottomRight;
+  background-image: url(/stock-image.jpg);
+  background-size: cover;
+  background-blend-mode: soft-light;
+
+  h1 {
+    font-size: 6rem;
+    margin: 2rem 0;
+    text-align: center;
+    color: $white;
+  }
+
+  p {
+    font-size: 2rem;
+    color: $white;
+    text-align: center;
+  }
+}
+
+.spacer {
+  margin: $vertical-margin * 1.5;
+}

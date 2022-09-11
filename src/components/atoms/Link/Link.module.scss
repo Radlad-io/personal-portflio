@@ -1,0 +1,23 @@
+@import "@styles/sizes.module.scss";
+@import "@styles/colors.module.scss";
+
+.link {
+  display: inline-block;
+  margin-top: $vertical-margin / 2;
+  margin-bottom: $vertical-margin / 4;
+  margin-left: $vertical-margin + 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: $selectiveYellow;
+  text-transform: uppercase;
+}
+
+.link::before {
+  content: "← ";
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.link:hover {
+  color: $xiketic;
+}

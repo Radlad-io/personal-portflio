@@ -1,0 +1,12 @@
+@import "@styles/sizes.module.scss";
+@import "@styles/colors.module.scss";
+
+.mask {
+  overflow: hidden;
+  padding: 0;
+  margin: $vertical-margin / 4;
+}
+
+.heading {
+  color: $xiketic;
+}

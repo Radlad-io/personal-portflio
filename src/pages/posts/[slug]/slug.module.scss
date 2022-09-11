@@ -1,0 +1,27 @@
+@import "@styles/sizes.module.scss";
+@import "@styles/mixins.module.scss";
+@import "@styles/colors.module.scss";
+
+.wrapper {
+  background-color: $xiketic;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: overlay;
+  p {
+    font-size: 4rem;
+    color: $white;
+    margin: 0 $vertical-margin + 20px;
+    @include md {
+      font-size: 6rem;
+    }
+  }
+}
+
+.flex {
+  width: 100%;
+  padding-top: $vertical-margin;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+}

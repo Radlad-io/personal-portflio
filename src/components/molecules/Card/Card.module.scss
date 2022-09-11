@@ -1,0 +1,43 @@
+@import "@styles/colors.module.scss";
+@import "@styles/sizes.module.scss";
+
+.card {
+  padding: 3.5rem;
+  margin: $vertical-margin / 6 $vertical-margin / 16;
+  background-color: $xiketic;
+  box-shadow: 0 0 $rosewood;
+  cursor: pointer;
+  transition: all ease-in-out 400ms;
+  h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: $white;
+  }
+
+  p {
+    color: $white;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    text-transform: capitalize;
+    font-weight: 900;
+  }
+  p::after {
+    content: " →";
+    font-weight: 900;
+    font-size: 2rem;
+    color: $selectiveYellow;
+    margin-left: 8px;
+    transition: all ease-in 400ms;
+  }
+}
+
+.card:hover {
+  box-shadow: 10px 10px $rosewood;
+  transform: translate3d(-5px, -5px, 0);
+}
+
+.card:hover > p::after {
+  margin-left: 14px;
+  // TODO: Transforms dont work on ::after ???
+  // transform: rotateZ(90deg);
+}

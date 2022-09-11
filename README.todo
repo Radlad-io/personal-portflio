@@ -1,0 +1,12 @@
+TODOS
+  ☐ Make better Button component
+  ☐ Fix Card CSS translate issue
+  ☐ Refine motion
+    ☐ Check out the scroll restore config
+    https://github.com/vercel/next.js/issues/20951#issuecomment-1189928650
+    ☐ Initial index animation doesn't play. Page hard loads. Is that only in dev?
+    ☐ Transition animation choreography is a bit clunky
+  ☐ Playwright tests aren't fully working
+  ☐ Jest tests aren't fully working
+  ☐ Storybook typography hasn't been setup
+  ☐ Should make a markdown component

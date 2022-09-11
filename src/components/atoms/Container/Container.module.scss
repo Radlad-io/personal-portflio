@@ -1,0 +1,38 @@
+@import "@styles/mixins.module.scss";
+
+.container,
+.containerSm {
+  width: 100%;
+  margin: auto;
+  max-width: 1200px;
+  @include sm {
+    width: 84%;
+  }
+}
+
+.containerMd {
+  width: 100%;
+  margin: auto;
+  max-width: 1200px;
+  @include md {
+    width: 84%;
+  }
+}
+
+.containerLg {
+  width: 100%;
+  margin: auto;
+  max-width: 1200px;
+  @include lg {
+    width: 84%;
+  }
+}
+
+.containerXl {
+  width: 100%;
+  margin: auto;
+  max-width: 1200px;
+  @include xl {
+    width: 84%;
+  }
+}
