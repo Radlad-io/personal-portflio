@@ -1,4 +1,4 @@
-# A Next.js starter file.
+# Person Portfolio for Kevin Merinsky
 
 Implements the following libraries and or technologies.
 
@@ -7,6 +7,7 @@ Implements the following libraries and or technologies.
 - [Jest + React Testing Library](https://jestjs.io/)
 - [Playwright.js](https://playwright.dev/)
 - [Framer-Motion](https://www.framer.com/motion/)
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 
 ## Testing
 
