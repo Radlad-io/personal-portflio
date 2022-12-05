@@ -44,7 +44,7 @@ const WebGL: FC<Properties> = (props) => {
         <OrthographicCamera
           makeDefault={true}
           frames={1}
-          zoom={700}
+          zoom={600}
           top={200}
           bottom={-200}
           left={200}
