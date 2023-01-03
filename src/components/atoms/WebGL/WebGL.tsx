@@ -7,6 +7,10 @@ import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+// Debug
+import { useControls } from "leva";
+import { Perf } from "r3f-perf";
+
 interface Properties {
   // Key: sting any allows for additional unknown types
   [key: string]: any;
@@ -34,6 +38,9 @@ const WebGL: FC<Properties> = (props) => {
   const toggleZoom = () => setZoom((active) => !active);
 
   // Effects
+  const perfVisable = useControls({
+    showPerformance: false,
+  });
 
   // Logic
 
@@ -41,6 +48,7 @@ const WebGL: FC<Properties> = (props) => {
   return (
     <div className={styles.wrapper}>
       <Canvas id={styles.canvas} dpr={[1, 2]}>
+        {perfVisable.showPerformance ? <Perf position="top-left" /> : null}
         <OrthographicCamera
           makeDefault={true}
           frames={1}
@@ -62,7 +70,7 @@ const WebGL: FC<Properties> = (props) => {
         />
         <pointLight position={[-10, -10, -10]} />
         <Suspense fallback={null}>
-          <Model source={"mockup.glb"} position={[-0.25, -1.85, 0]} />
+          <Model source={"model.glb"} position={[-0.25, -1.85, 0]} />
         </Suspense>
         <OrbitControls />
       </Canvas>
