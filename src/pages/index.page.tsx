@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import variants from "./index.motion";
 
 // Components
-import WebGL from "@components/atoms/Experience/Experience";
+import Experience from "@components/atoms/Experience/Experience";
 
 interface Properties {
   // [key: string]: any;
@@ -26,7 +26,7 @@ const HomePage: NextPage<Properties> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <WebGL />
+        <Experience />
         <div className={styles.test}></div>
       </main>
     </div>

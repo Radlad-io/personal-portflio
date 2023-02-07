@@ -13,6 +13,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.2.1",
+    "@mdx-js/react": "^2.2.1",
+    "@next/mdx": "^13.1.6",
     "@react-three/drei": "^9.46.0",
     "@react-three/fiber": "^8.9.1",
     "framer-motion": "^6.5.1",
