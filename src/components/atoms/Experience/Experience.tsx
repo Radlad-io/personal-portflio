@@ -1,6 +1,6 @@
 import { FC, Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import styles from "./WebGL.module.scss";
+import styles from "./Experience.module.scss";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
 
 //  Loaders
@@ -30,7 +30,7 @@ const Model = (props: any) => {
   );
 };
 
-const WebGL: FC<Properties> = (props) => {
+const Experience: FC<Properties> = (props) => {
   // Destructing
 
   // State
@@ -78,4 +78,4 @@ const WebGL: FC<Properties> = (props) => {
   );
 };
 
-export default WebGL;
+export default Experience;

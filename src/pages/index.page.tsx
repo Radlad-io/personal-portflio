@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import variants from "./index.motion";
 
 // Components
-import WebGL from "@components/atoms/WebGL/WebGL";
+import WebGL from "@components/atoms/Experience/Experience";
 
 interface Properties {
   // [key: string]: any;
