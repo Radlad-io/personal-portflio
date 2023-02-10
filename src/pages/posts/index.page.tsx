@@ -1,44 +1,39 @@
-import { FC } from "react";
-import { NextPage } from "next";
+import { getAllPosts } from '@libs/api'
+import Head from 'next/head'
+import { CMS_NAME } from '@libs/constants'
+import Post from '@interfaces/post'
 
-// Type definitions provided by next
-import { GetServerSideProps } from "next";
-
-// Components
-import Container from "@components/atoms/Container/Container";
-import Featured from "@components/templates/Featured";
-import Link from "@components/atoms/Link/Link";
-
-// This gets called on every request
-export const getServerSideProps: GetServerSideProps = async () => {
-  // Fetch data from external API
-  // https://dummyjson.com/
-  const res = await fetch(`https://dummyjson.com/posts`);
-  const data = await res.json();
-  // Pass data to the page via props
-  return {
-    props: { data },
-  };
-};
-
-interface Properties {
-  [key: string]: any;
-  id?: number;
-  title?: string;
-  body?: string;
-  userId?: number;
-  tags?: number;
-  reactions?: number;
+type Props = {
+  allPosts: Post[]
 }
 
-const PostsPage: NextPage<Properties> = (props) => {
-  const { posts } = props.data;
+export default function Index({ allPosts }: Props) {
   return (
-    <Container>
-      <Link route={"/"}>Return to home</Link>
-      <Featured posts={posts} heading={"All posts"} />
-    </Container>
-  );
-};
+    <>
+        <Head>
+          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+        </Head>
+        <h1>Test</h1>
+        {allPosts.map((post: any) => {
+          return(
+            <p>{post.title}</p>
+          )
+        })}
+    </>
+  )
+}
 
-export default PostsPage;
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+  ])
+
+  return {
+    props: { allPosts },
+  }
+}

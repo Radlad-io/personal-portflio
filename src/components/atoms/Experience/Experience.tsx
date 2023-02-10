@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { FC, Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import styles from "./Experience.module.scss";
@@ -32,15 +33,23 @@ const Model = (props: any) => {
 
 const Experience: FC<Properties> = (props) => {
   // Destructing
+  const router = useRouter();
 
   // State
   const [isZoom, setZoom] = useState(false);
   const toggleZoom = () => setZoom((active) => !active);
 
+  
+  // FIXME: I mean, come on dude.
+  const perfVisable = {};
+
   // Effects
-  const perfVisable = useControls({
-    showPerformance: false,
-  });
+  if(router.asPath.includes('#debug')){
+    perfVisable = useControls({
+      showPerformance: false,
+    });
+  }
+
 
   // Logic
 

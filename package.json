@@ -13,17 +13,18 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@mdx-js/loader": "^2.2.1",
-    "@mdx-js/react": "^2.2.1",
-    "@next/mdx": "^13.1.6",
     "@react-three/drei": "^9.46.0",
     "@react-three/fiber": "^8.9.1",
+    "date-fns": "^2.29.3",
     "framer-motion": "^6.5.1",
+    "gray-matter": "^4.0.3",
     "leva": "^0.9.34",
     "next": "12.2.2",
     "r3f-perf": "6.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.2",
     "three": "^0.147.0"
   },
   "devDependencies": {

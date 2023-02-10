@@ -1,70 +1,87 @@
-import { FC } from "react";
-import styles from "./slug.module.scss";
-import { useRouter } from "next/router";
-import { motion } from "framer-motion";
-import variants from "./slug.motion";
+import { useRouter } from 'next/router'
+import ErrorPage from 'next/error'
+import { getPostBySlug, getAllPosts } from '@libs/api'
+import Head from 'next/head'
+import { CMS_NAME } from '@libs/constants'
+import markdownToHtml from '@libs/markdownToHtml'
+import type PostType from '@interfaces/post'
+import PostBody from '@components/atoms/PostBody/PostBody'
 
-// Components
-import Link from "@components/atoms/Link/Link";
-import Container from "@components/atoms/Container/Container";
 
-export async function getStaticPaths() {
-  const res = await fetch(`https://dummyjson.com/posts`);
-  const data = await res.json();
-
-  const paths = data.posts.map((post: object) => {
-    return { params: { slug: `${post.id}` } };
-  });
-
-  return {
-    paths: paths,
-    fallback: true,
-  };
+type Props = {
+  post: PostType
+  morePosts: PostType[]
+  preview?: boolean
 }
 
-// TODO: Add types declerations
-export async function getStaticProps(context: object) {
-  // TODO: Break this out into a api lib
-  const res = await fetch(`https://dummyjson.com/posts/${context.params.slug}`);
-  const data = await res.json();
-  return {
-    props: { data }, // will be passed to the page component as props
-  };
-}
+export default function Post({ post, morePosts, preview }: Props) {
+  const router = useRouter()
 
-interface Properties {
-  // Key: sting any allows for additional unknown types
-  [key: string]: any;
-  children: JSX.Element | JSX.Element[];
-}
-
-const index: FC<Properties> = (props) => {
-  //  Destructuring
-  const { id, title, body, userId, tags, reactions } = props.data;
-
-  //  Fallback routing
-  const router = useRouter();
-  if (router.isFallback) {
-    return <div>Loading...</div>;
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />
   }
 
-  // Returns
   return (
-    <motion.div
-      className={styles.wrapper}
-      variants={variants.bg}
-      initial={"initial"}
-      animate={"in"}
-      exit={"out"}
-    >
-      <Container>
-        <Link route={"/posts"}>Return to post list</Link>
-        <div className={styles.flex}>
-          <motion.p variants={variants.body}>{body}</motion.p>
-        </div>
-      </Container>
-    </motion.div>
-  );
-};
+    <>
+        {router.isFallback ? (
+          <h1>Loading…</h1>
+        ) : (
+          <>
+            <article className="mb-32">
+              <Head>
+                <title>
+                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                </title>
+                <meta property="og:image" content={post.ogImage.url} />
+              </Head>
+              <h1>{post.title}</h1>
+              <PostBody content={post.content} />
+            </article>
+          </>
+        )}
+    </>
+  )
+}
 
-export default index;
+type Params = {
+  params: {
+    slug: string
+  }
+}
+
+export async function getStaticProps({ params }: Params) {
+  const post = getPostBySlug(params.slug, [
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+    'ogImage',
+    'coverImage',
+  ])
+  const content = await markdownToHtml(post.content || '')
+
+  return {
+    props: {
+      post: {
+        ...post,
+        content,
+      },
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug'])
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      }
+    }),
+    fallback: false,
+  }
+}
