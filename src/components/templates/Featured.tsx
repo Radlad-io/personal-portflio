@@ -7,8 +7,6 @@ import variants from "./Featured.motion";
 import Container from "@components/atoms/Container/Container";
 import Heading from "@components/atoms/Heading/Heading";
 import CardList from "@components/organisms/CardList/CardList";
-import Button from "@components/atoms/Button/Button";
-import Grid from "@components/atoms/Grid/Grid";
 
 interface Properties {
   children?: JSX.Element | JSX.Element[];
@@ -32,11 +30,6 @@ const Featured: FC<Properties> = (props) => {
       <Container>
         <Heading size={1}>{heading}</Heading>
         <CardList posts={posts} limit={limit} />
-        {/* <Grid justify="flex-end" alignItems="flex-end">
-          <Grid>
-          </Grid>
-        </Grid> */}
-        <Button dark>See More</Button>
       </Container>
     </motion.section>
   );
