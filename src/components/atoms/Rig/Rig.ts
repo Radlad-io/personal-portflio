@@ -1,4 +1,5 @@
 import React, { Suspense, useRef } from "react";
+import * as THREE from "three";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 
 interface Properties {

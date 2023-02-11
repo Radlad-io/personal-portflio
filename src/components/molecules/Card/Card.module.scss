@@ -4,8 +4,8 @@
 .card {
   padding: 3.5rem;
   margin: $vertical-margin / 6 $vertical-margin / 16;
-  background-color: $xiketic;
-  box-shadow: 0 0 $rosewood;
+  background-color: $red;
+  box-shadow: 0 0 $red;
   cursor: pointer;
   transition: all ease-in-out 400ms;
   h2 {
@@ -25,14 +25,14 @@
     content: " →";
     font-weight: 900;
     font-size: 2rem;
-    color: $selectiveYellow;
+    color: $yellow;
     margin-left: 8px;
     transition: all ease-in 400ms;
   }
 }
 
 .card:hover {
-  box-shadow: 10px 10px $rosewood;
+  box-shadow: 10px 10px $red;
   transform: translate3d(-5px, -5px, 0);
 }
 
