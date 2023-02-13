@@ -4,14 +4,17 @@
 *                          *
 ************************* */
 
-// https://coolors.co/03071e-370617-6a040f-9d0208-d00000-dc2f02-e85d04-f48c06-faa307-ffba08
-
-/* SCSS HSL */
-$white: hsla(0, 0%, 100%, 1);
-$black: hsla(0, 0%, 0%, 1);
+/* SCSS HSLA */
 $yellow: hsla(57, 91%, 78%, 1);
 $red: hsla(0, 73%, 64%, 1);
 $purple: hsla(275, 40%, 81%, 1);
+$white: hsla(0, 0%, 100%, 1);
+$black: hsla(0, 0%, 0%, 1);
+$gray_100: #f8f8f8;
+$gray_300: #f3f3f3;
+$gray_500: #dedede;
+$gray_700: #bfbfbf;
+$gray_900: #a8a8a8;
 
 // Exporting colors for use in JS
 :export {
@@ -20,4 +23,9 @@ $purple: hsla(275, 40%, 81%, 1);
   yellow: $yellow;
   red: $red;
   purple: $purple;
+  gray_100: $gray_100;
+  gray_300: $gray_300;
+  gray_500: $gray_500;
+  gray_700: $gray_700;
+  gray_900: $gray_900;
 }

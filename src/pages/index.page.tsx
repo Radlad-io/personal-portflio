@@ -6,6 +6,7 @@ import variants from "./index.motion";
 
 // Components
 import Experience from "@components/atoms/Experience/Experience";
+import Header from "@components/atoms/Header/Header";
 
 interface Properties {
   // [key: string]: any;
@@ -26,8 +27,8 @@ const HomePage: NextPage<Properties> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Experience />
-        <div className={styles.test}></div>
+        <Header />
+        {/* <Experience /> */}
       </main>
     </div>
   );

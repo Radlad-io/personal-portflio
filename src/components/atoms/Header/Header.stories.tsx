@@ -9,11 +9,3 @@ export default {
 export const Template: Story = () => <Header />;
 
 Template.storyName = "Main";
-
-// export const Large = Template.bind({});
-// Large.args = {
-//   backgroundColor: "red",
-//   label: "Press Me",
-//   size: "lg",
-//   dark: true,
-// };

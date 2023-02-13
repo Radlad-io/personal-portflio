@@ -1,0 +1,43 @@
+@import "@styles/colors.module.scss";
+@import "@styles/mixins.module.scss";
+@import "@styles/sizes.module.scss";
+@import "@styles/_fonts.module.scss";
+
+.wrapper {
+  color: $white;
+  text-decoration: none;
+  list-style: none;
+  width: 100%;
+  margin-bottom: 14px;
+  hr {
+    height: 3px;
+    background-color: white;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  a {
+    display: inline;
+    font-family: "tt_hoves_pro_medium";
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    @include sm {
+      font-size: 40px;
+    }
+  }
+  p {
+    display: inline;
+    font-family: "tt_hoves_pro_black";
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    @include sm {
+      font-size: 18px;
+    }
+  }
+}

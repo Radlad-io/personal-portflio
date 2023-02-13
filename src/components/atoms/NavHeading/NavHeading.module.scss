@@ -1,0 +1,17 @@
+@import "@styles/colors.module.scss";
+@import "@styles/mixins.module.scss";
+@import "@styles/sizes.module.scss";
+@import "@styles/_fonts.module.scss";
+
+.wrapper {
+  h2 {
+    font-family: "tt_hoves_pro_light";
+    text-transform: uppercase;
+    color: $white;
+    font-size: 10px;
+    letter-spacing: 3px;
+    @include sm {
+      font-size: 15px;
+    }
+  }
+}
