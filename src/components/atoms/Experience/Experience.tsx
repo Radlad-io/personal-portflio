@@ -1,8 +1,9 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { FC, Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import styles from "./Experience.module.scss";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
+import Rig from "@components/atoms/Rig/Rig";
 
 //  Loaders
 import { useLoader } from "@react-three/fiber";
@@ -39,23 +40,22 @@ const Experience: FC<Properties> = (props) => {
   const [isZoom, setZoom] = useState(false);
   const toggleZoom = () => setZoom((active) => !active);
 
-  
   // FIXME: I mean, come on dude.
   const perfVisable = {};
 
   // Effects
-  if(router.asPath.includes('#debug')){
+  if (router.asPath.includes("#debug")) {
     perfVisable = useControls({
       showPerformance: false,
     });
   }
-
 
   // Logic
 
   // Returns
   return (
     <div className={styles.wrapper}>
+      <div className={styles.bg}></div>
       <Canvas id={styles.canvas} dpr={[1, 2]}>
         {perfVisable.showPerformance ? <Perf position="top-left" /> : null}
         <OrthographicCamera
@@ -78,10 +78,13 @@ const Experience: FC<Properties> = (props) => {
           intensity={0.75}
         />
         <pointLight position={[-10, -10, -10]} />
-        <Suspense fallback={null}>
+        {/* TODO: Suspense keep breaking this */}
+        {/* <Suspense fallback={null}>
+        </Suspense> */}
+        <Rig>
           <Model source={"model.glb"} position={[-0.25, -1.85, 0]} />
-        </Suspense>
-        <OrbitControls />
+        </Rig>
+        {/* <OrbitControls /> */}
       </Canvas>
     </div>
   );

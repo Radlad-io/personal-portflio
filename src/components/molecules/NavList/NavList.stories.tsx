@@ -19,13 +19,18 @@ Main.args = {
   links: [
     {
       text: "Lunar Lander",
-      route: "/posts/test",
+      route: "/posts/lunar-lander",
+      year: 2023,
+    },
+    {
+      text: "Something Else",
+      route: "/posts/something-else",
       year: 2022,
     },
     {
-      text: "Test",
-      route: "/posts/test",
-      year: 2022,
+      text: "Unicorn Origami",
+      route: "/posts/unicorn-origami",
+      year: 2021,
     },
   ],
 };

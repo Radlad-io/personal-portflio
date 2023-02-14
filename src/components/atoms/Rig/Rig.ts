@@ -1,14 +1,15 @@
-import React, { Suspense, useRef } from "react";
 import * as THREE from "three";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 
 interface Properties {
   // Key: sting any allows for additional unknown types
   [key: string]: any;
   children?: JSX.Element | JSX.Element[];
+  current: {} | null;
 }
 
-function Rig({ children }: Properties) {
+const Rig = ({ children }: Properties) => {
   const ref = useRef();
   useFrame((state) => {
     ref.current.rotation.y = THREE.MathUtils.lerp(
@@ -22,5 +23,7 @@ function Rig({ children }: Properties) {
       0.025
     );
   });
-  return <group ref={ref}>{children}</group>;
+  return (
+    <group>{children}</group>;
+  ) 
 }

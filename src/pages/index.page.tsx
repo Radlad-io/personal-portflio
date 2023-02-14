@@ -28,7 +28,7 @@ const HomePage: NextPage<Properties> = (props) => {
       </Head>
       <main className={styles.main}>
         <Header />
-        {/* <Experience /> */}
+        <Experience />
       </main>
     </div>
   );

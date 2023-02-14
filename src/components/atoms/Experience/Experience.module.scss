@@ -5,4 +5,12 @@
   display: inline-block;
   width: 64vw;
   height: 100vh;
+  .bg {
+    position: absolute;
+    margin: -150px 0 0 -150px;
+    width: 65vw;
+    height: 125vh;
+    background-color: $gray_300;
+    transform: rotateZ(5deg);
+  }
 }
