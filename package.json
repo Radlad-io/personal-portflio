@@ -19,6 +19,7 @@
     "framer-motion": "^6.5.1",
     "gray-matter": "^4.0.3",
     "leva": "^0.9.34",
+    "maath": "^0.5.2",
     "next": "12.2.2",
     "r3f-perf": "6.5",
     "react": "18.2.0",

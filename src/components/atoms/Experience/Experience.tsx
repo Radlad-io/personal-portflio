@@ -1,8 +1,12 @@
 import { useRouter } from "next/router";
 import { FC, Suspense, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import styles from "./Experience.module.scss";
-import { OrbitControls, OrthographicCamera } from "@react-three/drei";
+import {
+  OrbitControls,
+  OrthographicCamera,
+  PerformanceMonitor,
+} from "@react-three/drei";
 import Rig from "@components/atoms/Rig/Rig";
 
 //  Loaders
@@ -42,6 +46,7 @@ const Experience: FC<Properties> = (props) => {
 
   // FIXME: I mean, come on dude.
   const perfVisable = {};
+  const [perfSucks, degrade] = useState(false);
 
   // Effects
   if (router.asPath.includes("#debug")) {
@@ -57,6 +62,10 @@ const Experience: FC<Properties> = (props) => {
     <div className={styles.wrapper}>
       <div className={styles.bg}></div>
       <Canvas id={styles.canvas} dpr={[1, 2]}>
+        <PerformanceMonitor
+          onDecline={() => degrade(true)}
+          onIncline={() => degrade(false)}
+        />
         {perfVisable.showPerformance ? <Perf position="top-left" /> : null}
         <OrthographicCamera
           makeDefault={true}
@@ -81,10 +90,9 @@ const Experience: FC<Properties> = (props) => {
         {/* TODO: Suspense keep breaking this */}
         {/* <Suspense fallback={null}>
         </Suspense> */}
-        <Rig>
-          <Model source={"model.glb"} position={[-0.25, -1.85, 0]} />
+        <Rig perfSucks={perfSucks}>
+          <Model source={"model.glb"} />
         </Rig>
-        {/* <OrbitControls /> */}
       </Canvas>
     </div>
   );
